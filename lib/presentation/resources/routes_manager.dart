@@ -24,17 +24,17 @@ class RouteGenerator{
     case Routes.splashRoute:
       return MaterialPageRoute(builder: (_)=> SplashView());
     case Routes.onBoardingRoutes:
-      return MaterialPageRoute(builder: (_)=> OnBoardingView());
+      return MaterialPageRoute(builder: (_)=> const OnBoardingView());
     case Routes.loginRoute:
-      return MaterialPageRoute(builder: (_)=> LoginView());
+      return MaterialPageRoute(builder: (_)=> const LoginView());
     case Routes.registerRoute:
-      return MaterialPageRoute(builder: (_)=> RegisterView());
+      return MaterialPageRoute(builder: (_)=> const RegisterView());
     case Routes.mainRoute:
-      return MaterialPageRoute(builder: (_)=> MainView());
+      return MaterialPageRoute(builder: (_)=> const MainView());
     case Routes.storeDetailsRoute:
-      return MaterialPageRoute(builder: (_)=> StoreDetailsView());
+      return MaterialPageRoute(builder: (_)=> const StoreDetailsView());
     case Routes.forGotPasswordRoute:
-      return MaterialPageRoute(builder: (_)=> ForgotPasswordView());
+      return MaterialPageRoute(builder: (_)=> const ForgotPasswordView());
     default:
       return UnDefineRoute();
   }

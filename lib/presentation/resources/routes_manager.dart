@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_restapi/app/dependecy_injection.dart';
 import 'package:flutter_restapi/presentation/forgot_password/forgot_password.dart';
 import 'package:flutter_restapi/presentation/login/login.dart';
 import 'package:flutter_restapi/presentation/main/main_view.dart';
@@ -26,6 +27,7 @@ class RouteGenerator{
     case Routes.onBoardingRoutes:
       return MaterialPageRoute(builder: (_)=> const OnBoardingView());
     case Routes.loginRoute:
+      initLoginModule();
       return MaterialPageRoute(builder: (_)=> const LoginView());
     case Routes.registerRoute:
       return MaterialPageRoute(builder: (_)=> const RegisterView());

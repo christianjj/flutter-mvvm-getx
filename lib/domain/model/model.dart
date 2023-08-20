@@ -29,6 +29,13 @@ class Authentication{
   Authentication(this.customer, this.contacts);
 }
 
+// class ForgotPassword{
+//   String support;
+//
+//
+//   ForgotPassword(this.support);
+// }
+
 class DeviceInfo{
   String name;
   String Identifier;

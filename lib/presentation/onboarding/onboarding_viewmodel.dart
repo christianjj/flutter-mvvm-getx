@@ -32,7 +32,7 @@ class OnBoardingViewModel extends BaseViewModel
   @override
   int goNext() {
     int nextIndex = _currentIndex ++;
-    if (nextIndex > _list.length){
+    if (nextIndex > _list.length - 2){
       _currentIndex = 0;
     }
     return _currentIndex;
@@ -82,7 +82,6 @@ class OnBoardingViewModel extends BaseViewModel
 abstract mixin class OnBoardingViewModelInputs {
   void goNext(); // when user click next
   void goPrev();
-
   void onPageChanged(int index);
 
   Sink get inputSliderViewObject; // this is the way to add data to the stream.. stream input

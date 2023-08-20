@@ -7,3 +7,9 @@ class LoginRequest {
 
   LoginRequest(this.email, this.password, this.imei, this.deviceType);
 }
+
+class ForgotPasswordRequest{
+  String email;
+
+  ForgotPasswordRequest(this.email);
+}

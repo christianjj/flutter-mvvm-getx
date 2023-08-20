@@ -1,5 +1,4 @@
-import 'dart:convert';
-import 'package:flutter/foundation.dart';
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'responses.g.dart';
@@ -7,7 +6,7 @@ part 'responses.g.dart';
 @JsonSerializable()
 class BaseResponse {
   @JsonKey(name: "status")
-  int? baseResponseStatus;
+  int? status;
   @JsonKey(name: "message")
   String? message;
 }
@@ -66,5 +65,21 @@ class AuthenticationResponse extends BaseResponse {
 
   //tojson
   Map<String,dynamic> toJson() => _$AuthenticationResponseToJson(this);
+
+}
+
+@JsonSerializable()
+class ForgotPasswordResponse extends BaseResponse {
+  @JsonKey(name: "support")
+  String? support;
+
+  ForgotPasswordResponse(this.support);
+
+  //from json
+  factory ForgotPasswordResponse.fromJson(Map<String, dynamic> json) =>
+      _$ForgotPasswordResponseFromJson(json);
+
+  //tojson
+  Map<String,dynamic> toJson() => _$ForgotPasswordResponseToJson(this);
 
 }

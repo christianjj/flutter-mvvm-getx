@@ -55,6 +55,7 @@ class ErrorHandler implements Exception {
     else {
       failure = DataSource.DEFAULT.getFailure();
     }
+    print(error.toString());
   }
 
     Failure _handlerError(DioException error) {

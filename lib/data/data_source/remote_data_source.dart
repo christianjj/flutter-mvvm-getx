@@ -3,9 +3,13 @@ import 'package:flutter_restapi/data/responses/responses.dart';
 
 import '../network/app_api.dart';
 
-abstract class RemoteDataSource{
+abstract class RemoteDataSource {
   Future<AuthenticationResponse> login(LoginRequest loginRequest);
+
   Future<ForgotPasswordResponse> forgotPassword(String email);
+
+  Future<AuthenticationResponse> register(RegisterRequest registerRequest);
+  Future<HomeResponse> getHome();
 }
 
 class RemoteDataSourceImplementer implements RemoteDataSource {
@@ -20,11 +24,26 @@ class RemoteDataSourceImplementer implements RemoteDataSource {
   }
 
   @override
-  Future<ForgotPasswordResponse> forgotPassword(String email) async{
-   return await _appServiceClient.forgotPassword(email);
+  Future<ForgotPasswordResponse> forgotPassword(String email) async {
+    return await _appServiceClient.forgotPassword(email);
   }
 
+  @override
+  Future<AuthenticationResponse> register(
+      RegisterRequest registerRequest) async {
+    return await _appServiceClient.register(
+        registerRequest.countryMobileCode,
+        registerRequest.userName,
+        registerRequest.email,
+        registerRequest.password,
+        registerRequest.mobileNumber,
+      ""
+      //  registerRequest.profilePicture
+    );
+  }
 
-
-
+  @override
+  Future<HomeResponse> getHome() async{
+    return await _appServiceClient.getHome();
+  }
 }

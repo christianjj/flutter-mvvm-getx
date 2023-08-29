@@ -29,12 +29,7 @@ class Authentication{
   Authentication(this.customer, this.contacts);
 }
 
-// class ForgotPassword{
-//   String support;
-//
-//
-//   ForgotPassword(this.support);
-// }
+
 
 class DeviceInfo{
   String name;
@@ -43,4 +38,45 @@ class DeviceInfo{
 
   DeviceInfo(this.name, this.Identifier, this.version);
 }
+
+class Services{
+  int id;
+  String title;
+  String image;
+
+  Services(this.id, this.title, this.image);
+}
+
+class Store{
+  int id;
+  String title;
+  String image;
+
+
+  Store(this.id, this.title, this.image );
+}
+
+class Banners{
+  int id;
+  String title;
+  String image;
+  String link;
+  Banners(this.id, this.title, this.image, this.link);
+}
+
+class HomeData{
+  List<Services> services;
+  List<Store> store;
+  List<Banners> banner;
+
+  HomeData(this.services, this.store, this.banner);
+}
+
+class HomeObject{
+  HomeData data;
+
+  HomeObject(this.data);
+}
+
+
 

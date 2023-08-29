@@ -54,6 +54,10 @@ dependencies:
   get_it: ^7.6.0
   lottie: ^2.6.0
   email_validator: ^2.1.17
+  country_code_picker: ^3.0.0
+  image_picker: ^1.0.2
+  rxdart: ^0.27.7
+  carousel_slider: ^4.0.0
 
 dev_dependencies:
   flutter_test:
@@ -87,12 +91,14 @@ flutter:
      - assets/images/onboarding_logo3.svg
      - assets/images/onboarding_logo4.svg
      - assets/images/hollow_cirlce_ic.svg
+     - assets/images/photo_camera_ic.svg
      - assets/images/left_arrow_ic.svg
      - assets/images/right_arrow_ic.svg
      - assets/images/solid_circle_ic.svg
      - assets/json/error.json
      - assets/json/empty.json
      - assets/json/loading.json
+     - assets/json/check.json
 
 
 

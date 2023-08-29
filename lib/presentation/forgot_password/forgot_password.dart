@@ -59,8 +59,8 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
 
 
   Widget _getContentWidget() {
-
-    return Scaffold(
+    return SafeArea(child:
+     Scaffold(
 
       appBar: AppBar(
         backgroundColor: ColorManager.primary,
@@ -71,8 +71,8 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SvgPicture.asset(ImageAssets.onboarding_logo1),
-            SizedBox(height: AppSize.s20),
+            SvgPicture.asset(ImageAssets.onboarding_logo1, height: AppSize.s180,),
+            const SizedBox(height: AppSize.s20),
             Padding(padding: const EdgeInsets.only(
                 left: AppPadding.p20, right: AppPadding.p20),
               child: SingleChildScrollView(
@@ -89,7 +89,7 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
                             labelText: AppStrings.email,
                             errorText: (snapshot.data ?? true)
                                 ? null
-                                : AppStrings.usernameError
+                                : AppStrings.emailError
                         ),
                       );
 
@@ -101,7 +101,7 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
               )
 
             ),
-            SizedBox(height: AppPadding.p20),
+            const SizedBox(height: AppPadding.p20),
             Padding(padding: const EdgeInsets.only(
                 left: AppPadding.p20, right: AppPadding.p20
             ),
@@ -117,7 +117,7 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
                         _viewModel.forgotPassword();
                       }
                           : null,
-                        child: const Text(AppStrings.loading)),
+                        child: const Text(AppStrings.resetPassword)),
                 );
               },
             )),
@@ -127,6 +127,7 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
           ],
         ),
       ),
+    )
     );
   }
 

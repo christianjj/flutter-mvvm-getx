@@ -1,5 +1,4 @@
-import 'package:dartz/dartz.dart';
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_restapi/data/mapper/mapper.dart';
 import 'package:flutter_restapi/presentation/resources/assets_manager.dart';
@@ -16,6 +15,7 @@ enum StateRendererType {
   //Pop up state
   POPUP_LOADING_STATE,
   POPUP_ERROR_STATE,
+  POPUP_SUCCESS_STATE,
 
   //Full Screen State
   FULL_SCREEN_LOADING_STATE,
@@ -55,8 +55,17 @@ class StateRenderer extends StatelessWidget {
           _getRetryButton(AppStrings.ok,
               context)
         ]);
+
+      case StateRendererType.POPUP_SUCCESS_STATE :
+        return _getPopUpDialog(context, [
+          _getAnimatedImage(JsonAssets.success),
+          _getMessage(title),
+          _getMessage(message),
+          _getRetryButton(AppStrings.ok,
+              context)
+        ]);
       case StateRendererType.FULL_SCREEN_LOADING_STATE :
-        return _getItemsInColumn([_getAnimatedImage(JsonAssets.error), _getMessage(message)]);
+        return _getItemsInColumn([_getAnimatedImage(JsonAssets.loading), _getMessage(message)]);
       case StateRendererType.FULL_SCREEN_ERROR_STATE :
        return _getItemsInColumn([
           _getAnimatedImage(JsonAssets.error),

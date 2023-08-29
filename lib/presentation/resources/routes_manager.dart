@@ -30,12 +30,15 @@ class RouteGenerator{
       initLoginModule();
       return MaterialPageRoute(builder: (_)=> const LoginView());
     case Routes.registerRoute:
+      initRegisterModule();
       return MaterialPageRoute(builder: (_)=> const RegisterView());
     case Routes.mainRoute:
+      initHomeModule();
       return MaterialPageRoute(builder: (_)=> const MainView());
     case Routes.storeDetailsRoute:
       return MaterialPageRoute(builder: (_)=> const StoreDetailsView());
     case Routes.forGotPasswordRoute:
+      initForgotPasswordModule();
       return MaterialPageRoute(builder: (_)=> const ForgotPasswordView());
     default:
       return UnDefineRoute();

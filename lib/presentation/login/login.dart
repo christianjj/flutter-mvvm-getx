@@ -68,7 +68,8 @@ class _LoginViewState extends State<LoginView> {
             }) ??
             _getContentWidget();
       },
-    ));
+    )
+    );
   }
 
   Widget _getContentWidget() {
@@ -94,7 +95,12 @@ class _LoginViewState extends State<LoginView> {
                         keyboardType: TextInputType.emailAddress,
                         controller: _userNameController,
                         decoration: InputDecoration(
-                            hintText: AppStrings.username,
+                            enabledBorder: (snapshot.data ?? false)
+                                ? OutlineInputBorder(
+                          borderSide: BorderSide(color: ColorManager.green, width: AppSize.s1_5))
+                                : OutlineInputBorder(
+                                borderSide: BorderSide(color: ColorManager.grey, width: AppSize.s1_5)),
+                            hintText: AppStrings.hintUsername,
                             labelText: AppStrings.username,
                             errorText: (snapshot.data ?? true)
                                 ? null

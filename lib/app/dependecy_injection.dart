@@ -6,10 +6,15 @@ import 'package:flutter_restapi/data/network/network_info.dart';
 import 'package:flutter_restapi/data/repository/repository_impl.dart';
 import 'package:flutter_restapi/domain/repository/repository.dart';
 import 'package:flutter_restapi/domain/usecase/forgot_password_usecase.dart';
+import 'package:flutter_restapi/domain/usecase/home_usecase.dart';
 import 'package:flutter_restapi/domain/usecase/login_usecase.dart';
+import 'package:flutter_restapi/domain/usecase/register_usecase.dart';
 import 'package:flutter_restapi/presentation/forgot_password/forgotpassword_viewmodel.dart';
 import 'package:flutter_restapi/presentation/login/login_viewmodel.dart';
+import 'package:flutter_restapi/presentation/main/home/home_viewmodel.dart';
+import 'package:flutter_restapi/presentation/register/register_viewmodel.dart';
 import 'package:get_it/get_it.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
 
 import 'package:shared_preferences/shared_preferences.dart';
@@ -47,21 +52,41 @@ Future<void> initAppModule() async {
 
 }
 
-initLoginModule(){
-  if(!GetIt.I.isRegistered<LoginUseCase>()) {
+initLoginModule() {
+  if (!GetIt.I.isRegistered<LoginUseCase>()) {
     instance.registerFactory<LoginUseCase>(
             () => LoginUseCase(instance()));
 
     instance.registerFactory<LoginViewModel>(
             () => LoginViewModel(instance()));
   }
-  if(!GetIt.I.isRegistered<ForgotPasswordUseCase>()) {
-    instance.registerFactory<ForgotPasswordUseCase>(
-            () => ForgotPasswordUseCase(instance()));
+}
+  initForgotPasswordModule() {
+    if (!GetIt.I.isRegistered<ForgotPasswordUseCase>()) {
+      instance.registerFactory<ForgotPasswordUseCase>(
+              () => ForgotPasswordUseCase(instance()));
 
-    instance.registerFactory<ForgotPasswordViewModel>(
-            () => ForgotPasswordViewModel(instance()));
+      instance.registerFactory<ForgotPasswordViewModel>(
+              () => ForgotPasswordViewModel(instance()));
+    }
   }
 
+  initRegisterModule() {
+    if (!GetIt.I.isRegistered<RegisterUseCase>()) {
+      instance.registerFactory<RegisterUseCase>(
+              () => RegisterUseCase(instance()));
+      instance.registerFactory<RegistrationViewModel>(
+              () => RegistrationViewModel(instance()));
+      instance.registerFactory<ImagePicker>(
+              () => ImagePicker());
+    }
+  }
 
+initHomeModule() {
+  if (!GetIt.I.isRegistered<HomeUseCase>()) {
+    instance.registerFactory<HomeUseCase>(
+            () => HomeUseCase(instance()));
+    instance.registerFactory<HomeViewModel>(
+            () => HomeViewModel(instance()));
+  }
 }

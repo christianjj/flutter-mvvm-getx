@@ -10,6 +10,7 @@ class Assets {
   static const String imagesOnboardingLogo4 = 'assets/images/onboarding_logo4.svg';
   static const String imagesRightArrowIc = 'assets/images/right_arrow_ic.svg';
   static const String imagesSolidCircleIc = 'assets/images/solid_circle_ic.svg';
+  static const String imagesPhotoCamera = 'assets/images/photo_camera_ic.svg';
   static const String imagesSplashLogo = 'assets/images/splash_logo.png';
   static const String imagesSplashLogo9 = 'assets/images/splash_logo.9.png';
   static const String jsonEmpty = 'assets/json/empty.json';

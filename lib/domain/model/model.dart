@@ -56,6 +56,18 @@ class Store{
   Store(this.id, this.title, this.image );
 }
 
+class StoreDetails{
+  int id;
+  String image;
+  String title;
+  String details;
+  String services;
+  String about;
+
+  StoreDetails(
+      this.id, this.image, this.title, this.details, this.services, this.about);
+}
+
 class Banners{
   int id;
   String title;

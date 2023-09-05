@@ -1,14 +1,17 @@
 import 'package:flutter_restapi/app/app_prefs.dart';
+import 'package:flutter_restapi/data/data_source/local_data_source.dart';
 import 'package:flutter_restapi/data/data_source/remote_data_source.dart';
 import 'package:flutter_restapi/data/network/app_api.dart';
 import 'package:flutter_restapi/data/network/dio_factory.dart';
 import 'package:flutter_restapi/data/network/network_info.dart';
 import 'package:flutter_restapi/data/repository/repository_impl.dart';
+import 'package:flutter_restapi/domain/model/model.dart';
 import 'package:flutter_restapi/domain/repository/repository.dart';
 import 'package:flutter_restapi/domain/usecase/forgot_password_usecase.dart';
 import 'package:flutter_restapi/domain/usecase/home_usecase.dart';
 import 'package:flutter_restapi/domain/usecase/login_usecase.dart';
 import 'package:flutter_restapi/domain/usecase/register_usecase.dart';
+import 'package:flutter_restapi/domain/usecase/store_details_usecase.dart';
 import 'package:flutter_restapi/presentation/forgot_password/forgotpassword_viewmodel.dart';
 import 'package:flutter_restapi/presentation/login/login_viewmodel.dart';
 import 'package:flutter_restapi/presentation/main/home/home_viewmodel.dart';
@@ -18,6 +21,8 @@ import 'package:image_picker/image_picker.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
 
 import 'package:shared_preferences/shared_preferences.dart';
+
+import '../presentation/store_detail/store_detail_viewmodel.dart';
 
 final instance = GetIt.instance;
 
@@ -45,9 +50,13 @@ Future<void> initAppModule() async {
   instance.registerLazySingleton<RemoteDataSource>(
           () => RemoteDataSourceImplementer(instance()));
 
+  //local data source
+  instance.registerLazySingleton<LocalDataSource>(
+          () => LocalRemoteDataSourceImplementer());
+
   //repository
   instance.registerLazySingleton<Repository>(
-          () => RepositoryImpl(instance(), instance()));
+          () => RepositoryImpl(instance(), instance(), instance()));
 
 
 }
@@ -90,3 +99,22 @@ initHomeModule() {
             () => HomeViewModel(instance()));
   }
 }
+
+  initStoreDetailsModule() {
+    if (!GetIt.I.isRegistered<StoreDetailsUseCase>()) {
+      instance.registerFactory<StoreDetailsUseCase>(
+              () => StoreDetailsUseCase(instance()));
+      instance.registerFactory<StoreDetailsViewModel>(
+              () => StoreDetailsViewModel(instance()));
+    }
+  }
+
+    resetAllModules(){
+      instance.reset(dispose: false);
+      initAppModule();
+      initHomeModule();
+      initLoginModule();
+      initRegisterModule();
+      initForgotPasswordModule();
+      initStoreDetailsModule();
+    }

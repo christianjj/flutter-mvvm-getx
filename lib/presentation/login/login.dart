@@ -37,6 +37,8 @@ class _LoginViewState extends State<LoginView> {
     _viewModel.isLoggedInSuccessfullyStreamController.stream.listen((isSuccess) {
       SchedulerBinding.instance?.addPostFrameCallback((_) {
         _appPreferences.setUserLoggedIn();
+        _appPreferences.setToken(isSuccess);
+        resetAllModules();
         Navigator.of(context).pushReplacementNamed(Routes.mainRoute);
       });
     });

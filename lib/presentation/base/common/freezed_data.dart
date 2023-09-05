@@ -22,3 +22,5 @@ class RegistrationObject with _$RegistrationObject {
       String mobileNumber,
       String profilePicture) = _RegistrationObject;
 }
+
+

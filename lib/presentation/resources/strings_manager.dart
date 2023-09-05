@@ -40,6 +40,14 @@ class AppStrings{
   static const String services = "Services";
   static const String stores = "Stores";
   static const String ok = "Ok";
+  static const String storeDetails = "Store Details";
+  static const String details = "Details";
+  static const String about = "About";
+  static const String changeLanguage = "Change Language";
+  static const String contactUs = "About";
+  static const String inviteFriends = "Invite Your Friends";
+  static const String logout = "Logout";
+
 
 
 }

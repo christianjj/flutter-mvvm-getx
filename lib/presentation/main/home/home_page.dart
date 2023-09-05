@@ -17,7 +17,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  HomeViewModel _viewModel = instance<HomeViewModel>();
+  final HomeViewModel _viewModel = instance<HomeViewModel>();
 
   @override
   void initState() {
@@ -54,15 +54,20 @@ class _HomePageState extends State<HomePage> {
   }
 
   Widget _getContentWidget() {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        _getBannersCarousel(),
-        _getSection(AppStrings.services),
-        _getServices(),
-        _getSection(AppStrings.stores),
-        _getStores()
-      ],
+    return StreamBuilder<HomeViewData>(
+      stream: _viewModel.outputHomeObject,
+      builder: (context, snapshot) {
+        return Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            _getBannersCarousel(snapshot.data?.banner),
+            _getSection(AppStrings.services),
+            _getServices(snapshot.data?.services),
+            _getSection(AppStrings.stores),
+            _getStores(snapshot.data?.store)
+          ],
+        );
+      }
     );
   }
 
@@ -83,13 +88,13 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  Widget _getBannersCarousel() {
-    return StreamBuilder<List<Banners>>(
-      stream: _viewModel.outputBanner,
-      builder: (context, snapshot) {
-        return _getBanner(snapshot.data);
-      },
-    );
+  Widget _getBannersCarousel(List<Banners>? banners) {
+    //return StreamBuilder<List<Banners>>(
+     // stream: _viewModel.outputHomeObject.map((event) => event.banner),
+      //builder: (context, snapshot) {
+        return _getBanner(banners);
+      //},
+
   }
 
   Widget _getBanner(List<Banners>? banners) {
@@ -122,13 +127,13 @@ class _HomePageState extends State<HomePage> {
     }
   }
 
-  Widget _getServices() {
-    return StreamBuilder<List<Services>>(
-      stream: _viewModel.outputServices,
-      builder: (context, snapshot) {
-        return _getService(snapshot.data);
-      },
-    );
+  Widget _getServices(List<Services>? services) {
+   // return StreamBuilder<List<Services>>(
+     // stream: _viewModel.outputHomeObject.map((event) => event.services),
+     // builder: (context, snapshot) {
+        return _getService(services);
+     // },
+    //);
   }
 
   _getService(List<Services>? service) {
@@ -178,13 +183,13 @@ class _HomePageState extends State<HomePage> {
     }
   }
 
-  Widget _getStores() {
-    return StreamBuilder<List<Store>>(
-      stream: _viewModel.outputStores,
-      builder: (context, snapshot) {
-        return _getStoreWidget(snapshot.data);
-      },
-    );
+  Widget _getStores(List<Store>? store) {
+    //return StreamBuilder<List<Store>>(
+      //stream: _viewModel.outputHomeObject.map((event) => event.store),
+      //builder: (context, snapshot) {
+        return _getStoreWidget(store);
+      //},
+  //  );
   }
 
   _getStoreWidget(List<Store>? store) {

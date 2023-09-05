@@ -20,8 +20,3 @@ class ForgotPasswordUseCase
   }
 }
 
-class ForgotPasswordCaseInput {
-  String email;
-
-  ForgotPasswordCaseInput(this.email);
-}

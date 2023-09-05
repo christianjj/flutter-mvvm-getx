@@ -19,7 +19,7 @@ class LoginViewModel extends BaseViewModel
       StreamController<void>.broadcast();
 
    StreamController isLoggedInSuccessfullyStreamController =
-      StreamController<bool>();
+      StreamController<String>();
 
   var loginObject = LoginObject("", "");
 
@@ -62,7 +62,8 @@ class LoginViewModel extends BaseViewModel
                       StateRendererType.POPUP_ERROR_STATE, failure.message))
                 },
             (data)  {inputState.add(ContentState());
-            isLoggedInSuccessfullyStreamController.add(true);
+
+            isLoggedInSuccessfullyStreamController.add("qwertyui");
             });
 
   }

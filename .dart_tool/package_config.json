@@ -332,6 +332,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "image",
+      "rootUri": "file:///C:/Users/thegr/AppData/Local/Pub/Cache/hosted/pub.dev/image-4.0.17",
+      "packageUri": "lib/",
+      "languageVersion": "2.15"
+    },
+    {
       "name": "image_picker",
       "rootUri": "file:///C:/Users/thegr/AppData/Local/Pub/Cache/hosted/pub.dev/image_picker-1.0.2",
       "packageUri": "lib/",
@@ -608,6 +614,12 @@
       "languageVersion": "2.17"
     },
     {
+      "name": "signature",
+      "rootUri": "file:///C:/Users/thegr/AppData/Local/Pub/Cache/hosted/pub.dev/signature-5.4.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.19"
+    },
+    {
       "name": "sky_engine",
       "rootUri": "file:///C:/dev/flutter/bin/cache/pkg/sky_engine",
       "packageUri": "lib/",
@@ -752,7 +764,7 @@
       "languageVersion": "3.0"
     }
   ],
-  "generated": "2023-08-25T13:25:35.861120Z",
+  "generated": "2023-09-11T02:22:58.791222Z",
   "generator": "pub",
   "generatorVersion": "3.0.6"
 }

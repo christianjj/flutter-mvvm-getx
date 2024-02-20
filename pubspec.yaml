@@ -58,6 +58,7 @@ dependencies:
   image_picker: ^1.0.2
   rxdart: ^0.27.7
   carousel_slider: ^4.0.0
+  signature: ^5.4.0
 
 dev_dependencies:
   flutter_test:
@@ -104,6 +105,8 @@ flutter:
      - assets/json/empty.json
      - assets/json/loading.json
      - assets/json/check.json
+     - assets/images/rcf_logo_on_login.png
+     - assets/images/sign_in_register_upper_bg_graphic.png
 
 
 

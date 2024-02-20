@@ -84,6 +84,7 @@ class HomeData{
   HomeData(this.services, this.store, this.banner);
 }
 
+
 class HomeObject{
   HomeData data;
 

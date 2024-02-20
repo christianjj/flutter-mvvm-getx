@@ -210,6 +210,10 @@ http_parser
 2.12
 file:///C:/Users/thegr/AppData/Local/Pub/Cache/hosted/pub.dev/http_parser-4.0.2/
 file:///C:/Users/thegr/AppData/Local/Pub/Cache/hosted/pub.dev/http_parser-4.0.2/lib/
+image
+2.15
+file:///C:/Users/thegr/AppData/Local/Pub/Cache/hosted/pub.dev/image-4.0.17/
+file:///C:/Users/thegr/AppData/Local/Pub/Cache/hosted/pub.dev/image-4.0.17/lib/
 image_picker
 2.18
 file:///C:/Users/thegr/AppData/Local/Pub/Cache/hosted/pub.dev/image_picker-1.0.2/
@@ -394,6 +398,10 @@ shelf_web_socket
 2.17
 file:///C:/Users/thegr/AppData/Local/Pub/Cache/hosted/pub.dev/shelf_web_socket-1.0.4/
 file:///C:/Users/thegr/AppData/Local/Pub/Cache/hosted/pub.dev/shelf_web_socket-1.0.4/lib/
+signature
+2.19
+file:///C:/Users/thegr/AppData/Local/Pub/Cache/hosted/pub.dev/signature-5.4.0/
+file:///C:/Users/thegr/AppData/Local/Pub/Cache/hosted/pub.dev/signature-5.4.0/lib/
 source_gen
 3.0
 file:///C:/Users/thegr/AppData/Local/Pub/Cache/hosted/pub.dev/source_gen-1.4.0/

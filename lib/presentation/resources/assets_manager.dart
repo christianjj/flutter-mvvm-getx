@@ -18,6 +18,8 @@ class ImageAssets{
   static const String inviteFriends = "$IMAGE_PATH/invite_friends_ic.svg";
   static const String logout = "$IMAGE_PATH/logout_ic.svg";
   static const String settingsRightArrow = "$IMAGE_PATH/settings_right_arrow_ic.svg";
+  static const String rcfLogoWhite = "$IMAGE_PATH/rcf_logo_on_login.png";
+  static const String bgLoginBlue = "$IMAGE_PATH/sign_in_register_upper_bg_graphic.png";
 }
 
 class JsonAssets{
